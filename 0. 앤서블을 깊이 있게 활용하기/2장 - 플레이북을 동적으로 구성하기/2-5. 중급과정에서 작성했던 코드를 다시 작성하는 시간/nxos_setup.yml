@@ -1,0 +1,12 @@
+---
+- name: Gather facts for NXOS devices
+  hosts: NXOS
+  connection: local
+  gather_facts: no
+
+  tasks:
+  - nxos_facts:
+      gather_subset: all
+      transport: cli
+    register: facts_data
+  - debug: var=facts_data

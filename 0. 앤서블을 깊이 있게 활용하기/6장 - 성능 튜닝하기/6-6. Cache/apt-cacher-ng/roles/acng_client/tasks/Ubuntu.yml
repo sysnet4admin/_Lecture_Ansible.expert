@@ -1,0 +1,7 @@
+- name: apt-get update
+  apt: update_cache=yes
+- name: Config Proxy Client
+  lineinfile:
+    create: yes
+    path: /etc/apt/apt.conf.d/02proxy
+    line: Acquire::http { Proxy "http://{{ acng_server }}:3142"; };

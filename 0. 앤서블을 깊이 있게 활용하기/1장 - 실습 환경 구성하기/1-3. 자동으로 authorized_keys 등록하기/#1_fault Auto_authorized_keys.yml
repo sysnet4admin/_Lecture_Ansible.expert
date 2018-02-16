@@ -1,0 +1,14 @@
+---
+- hosts: localhost
+  gather_facts: no
+  tasks:
+  - name: ssh-keygen
+    command: "ssh-keygen -b 2048 -t rsa -f ~/.ssh/id_rsa -q -N ''"
+  
+- hosts: nodes
+  gather_facts: no
+  tasks:
+  - name: remote copy for authorized_keys
+    copy:
+      src:  /home/vagrant/.ssh/id_rsa.pub
+      dest: /home/vagrant/.ssh/authorized_keys

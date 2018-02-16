@@ -1,0 +1,12 @@
+---
+- name: Install&Config apg-cacher-ng for Server
+  hosts: localhost
+  become: yes
+  roles:
+    - { role: ./roles/acng_server }
+
+- name: Config apg-cacher-ng for Clients
+  hosts: nodes
+  become: yes
+  roles:
+    - { role: ./roles/acng_client }

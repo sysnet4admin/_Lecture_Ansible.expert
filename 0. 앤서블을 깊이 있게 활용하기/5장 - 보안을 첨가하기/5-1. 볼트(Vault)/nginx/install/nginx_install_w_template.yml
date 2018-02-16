@@ -1,0 +1,19 @@
+---
+- name: Install nginx on the nodes
+  hosts: nodes
+  become: yes
+
+  tasks:
+  - name: nginx for Any Linux
+    include_tasks: "{{ lnx_name }}.yml"
+  - name: Check nginx config
+    command: "nginx -t"
+    register: nginx
+  - debug: msg="{{ nginx.stderr_lines }}"
+
+  - name: Check nginx service
+    debug: msg="{{lookup('template','ins_chk.j2').split('\n')}}"
+
+  handlers:
+  - name: Restart nginx web server
+    service: name=nginx state=restarted

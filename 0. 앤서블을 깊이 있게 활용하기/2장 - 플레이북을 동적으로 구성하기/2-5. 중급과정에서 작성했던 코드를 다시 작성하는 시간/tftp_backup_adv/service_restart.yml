@@ -1,0 +1,12 @@
+- name: service daemon restart
+  become: yes
+  systemd:
+    state: restarted
+    daemon_reload: yes
+    name: tftp
+
+- name: service restart
+  become: yes
+  service:
+    name: xinetd
+    state: restarted

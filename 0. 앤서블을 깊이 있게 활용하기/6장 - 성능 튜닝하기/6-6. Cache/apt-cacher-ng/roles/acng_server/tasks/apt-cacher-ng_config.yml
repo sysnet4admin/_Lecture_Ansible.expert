@@ -1,0 +1,21 @@
+- name: Uncomment VerboseLog in /etc/apt-cacher-ng/acng.conf
+  replace:
+    path: /etc/apt-cacher-ng/acng.conf
+    regexp: '# 3142'
+    replace: '3142'
+- name: Uncomment VerboseLog in /etc/apt-cacher-ng/acng.conf
+  replace:
+    path: /etc/apt-cacher-ng/acng.conf
+    regexp: '# VerboseLog: 1'
+    replace: 'VerboseLog: 1'
+- name: Uncomment PidFile in /etc/apt-cacher-ng/acng.conf
+  replace:
+    path: /etc/apt-cacher-ng/acng.conf
+    regexp: '# PidFile: /var/run/apt-cacher-ng/pid'
+    replace: 'PidFile: /var/run/apt-cacher-ng/pid'
+- name: Add BindAddress
+  lineinfile:
+    path: /etc/apt-cacher-ng/acng.conf
+    insertafter: '# BindAddress: localhost 192.168.7.25'
+    line: "BindAddress: 0.0.0.0"
+    backup: yes

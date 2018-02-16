@@ -1,0 +1,9 @@
+---
+- name: Install nginx on the nodes
+  hosts: nodes
+  become: yes
+
+  tasks:
+    - name: Install nginx web server
+      action : "{{ ansible_pkg_mgr }} name=nginx state=present update_cache=yes"
+      when : ansible_distribution == 'Ubuntu'

@@ -1,0 +1,3 @@
+- command: "nginx -t"
+  register: nginx
+- debug: msg="{{ nginx.stderr_lines }}"

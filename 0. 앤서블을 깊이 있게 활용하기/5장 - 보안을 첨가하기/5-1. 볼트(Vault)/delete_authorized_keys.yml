@@ -1,0 +1,9 @@
+---
+- hosts: nodes
+  gather_facts: no
+
+  tasks:
+  - name: delete authorized_keys
+    file:
+      path: /home/vagrant/.ssh/authorized_keys
+      state: absent

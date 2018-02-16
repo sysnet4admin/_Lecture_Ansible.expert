@@ -1,0 +1,12 @@
+---
+- name: Callback Plugin
+  hosts: localhost
+  become: yes
+
+  tasks:
+   - name: Modify profile_tasks, timer
+     replace:
+       path: /etc/ansible/ansible.cfg
+       regexp: '#callback_whitelist = timer, mail'
+       replace: 'callback_whitelist = profile_tasks, timer'
+       backup: yes

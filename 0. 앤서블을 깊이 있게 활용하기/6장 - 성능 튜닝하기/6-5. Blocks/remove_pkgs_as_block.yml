@@ -1,0 +1,24 @@
+---
+- hosts: nodes
+  become: yes
+  gather_facts: no
+
+  vars:
+    svc_pkg:
+      - ['samba','ntp']
+    dev_pkg:
+      - git  
+      - golang
+      - clang
+    mnt_pkg:
+      - [['freeipmi','crash'],['tftp'],'psutils','rsyslog','tree']
+
+  tasks:
+  - name: delete pkg(s) thru block method
+    package: 
+      name: "{{ item }}"
+      state: absent
+    with_flattened:
+     - "{{ svc_pkg }}"
+     - "{{ dev_pkg }}"
+     - "{{ mnt_pkg }}"

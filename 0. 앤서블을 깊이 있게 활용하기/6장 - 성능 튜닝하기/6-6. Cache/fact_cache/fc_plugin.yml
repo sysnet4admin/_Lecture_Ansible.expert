@@ -1,0 +1,25 @@
+---
+- name: fact_caching Plugin
+  hosts: localhost
+  become: yes
+  gather_facts: no
+
+  tasks:
+   - name: Modify fact_caching
+     replace:
+       path: /etc/ansible/ansible.cfg
+       regexp: '#fact_caching = memory'
+       replace: 'fact_caching = jsonfile'
+       backup: yes
+   - name: Add fact_caching
+     lineinfile:
+       path: /etc/ansible/ansible.cfg
+       insertafter: 'fact_caching = jsonfile'
+       line: "{{ item }}"
+     with_items:
+       - "fact_caching_connection = /tmp/ansible_facts_cache"
+       - "gathering = smart"
+       - "#fact_caching_timeout = 3600"
+
+
+

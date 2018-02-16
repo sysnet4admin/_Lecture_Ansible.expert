@@ -1,0 +1,26 @@
+---
+- hosts: nodes
+  become: yes
+
+  vars:
+    svc_pkg:
+      - ['samba','ntp']
+    dev_pkg:
+      - git  
+      - golang
+      - clang
+    mnt_pkg:
+      - [['freeipmi','crash'],['tftp'],'psutils','rsyslog','tree']
+
+  tasks:
+  - name: update_cache for Ubuntu
+    action : "{{ ansible_pkg_mgr }} update_cache=yes"
+    when : ansible_distribution == 'Ubuntu'
+  - name: add pkg(s) thru block method
+    package: 
+      name: "{{ item }}"
+      state: present
+    with_flattened:
+     - "{{ svc_pkg }}"
+     - "{{ dev_pkg }}"
+     - "{{ mnt_pkg }}"

@@ -1,0 +1,42 @@
+- name: install  xinetd & tftp-server
+  become: yes
+  yum:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - "xinetd"
+    - "tftp-server"
+
+- name: make tftp_shared_directory
+  file:
+    path: "{{ ansible_user_dir }}/tftp_shared"
+    state: directory
+    mode: 0777
+
+- name: modify tftp's config (1)
+  become: yes
+  replace:
+    path: /etc/xinetd.d/tftp
+    regexp: 'root'
+    replace: 'vagrant'
+
+- name: modify tftp's config (2)
+  become: yes
+  replace:
+    path: /etc/xinetd.d/tftp
+    regexp: '-s /var/lib/tftpboot'
+    replace: '-c -p -u vagrant -s {{ ansible_user_dir }}/tftp_shared'
+
+- name: modify tftp's config (3)
+  become: yes
+  lineinfile:
+    path: /etc/xinetd.d/tftp
+    regexp: 'disable'
+    line: 'disable = disable'
+
+- name: modify tftp service's config
+  become: yes
+  replace:
+    path: /usr/lib/systemd/system/tftp.service
+    regexp: '-s /var/lib/tftpboot'
+    replace: '-c -p -u vagrant -s {{ ansible_user_dir }}/tftp_shared'

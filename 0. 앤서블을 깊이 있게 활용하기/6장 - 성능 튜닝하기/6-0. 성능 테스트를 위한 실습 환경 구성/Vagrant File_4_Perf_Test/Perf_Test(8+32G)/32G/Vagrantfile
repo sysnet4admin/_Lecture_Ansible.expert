@@ -1,0 +1,299 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# Total Nodes 22  
+
+Vagrant_API_Version ="2"
+
+Vagrant.configure(Vagrant_API_Version) do |config|
+
+  #==============#
+  # Ubuntu nodes #
+  #==============#
+  
+  #Ansible-Node110	 
+  config.vm.define:"ansible-node110" do |cfg|
+     cfg.vm.box = "ubuntu/trusty64"
+	 cfg.vm.provider:virtualbox do |vb|
+	   vb.name="Ansible-Node110(github_SysNet4Admin)"
+	 end
+	 cfg.vm.host_name="ansible-node110"
+	 cfg.vm.synced_folder ".", "/vagrant", disabled: true
+	 cfg.vm.network "public_network", ip: "192.168.1.110"
+	 cfg.vm.network "forwarded_port", guest: 22, host: 60110, auto_correct: false, id: "ssh"
+  end  
+  
+  #Ansible-Node111	 
+  config.vm.define:"ansible-node111" do |cfg|
+     cfg.vm.box = "ubuntu/trusty64"
+	 cfg.vm.provider:virtualbox do |vb|
+	   vb.name="Ansible-Node111(github_SysNet4Admin)"
+	 end
+	 cfg.vm.host_name="ansible-node111"
+	 cfg.vm.synced_folder ".", "/vagrant", disabled: true
+	 cfg.vm.network "public_network", ip: "192.168.1.111"
+	 cfg.vm.network "forwarded_port", guest: 22, host: 60111, auto_correct: false, id: "ssh"
+  end  
+  
+  #Ansible-Node112	 
+  config.vm.define:"ansible-node112" do |cfg|
+     cfg.vm.box = "ubuntu/trusty64"
+	 cfg.vm.provider:virtualbox do |vb|
+	   vb.name="Ansible-Node112(github_SysNet4Admin)"
+	 end
+	 cfg.vm.host_name="ansible-node112"
+	 cfg.vm.synced_folder ".", "/vagrant", disabled: true
+	 cfg.vm.network "public_network", ip: "192.168.1.112"
+	 cfg.vm.network "forwarded_port", guest: 22, host: 60112, auto_correct: false, id: "ssh"
+  end  
+  
+  #Ansible-Node113	 
+  config.vm.define:"ansible-node113" do |cfg|
+     cfg.vm.box = "ubuntu/trusty64"
+	 cfg.vm.provider:virtualbox do |vb|
+	   vb.name="Ansible-Node113(github_SysNet4Admin)"
+	 end
+	 cfg.vm.host_name="ansible-node113"
+	 cfg.vm.synced_folder ".", "/vagrant", disabled: true
+	 cfg.vm.network "public_network", ip: "192.168.1.113"
+	 cfg.vm.network "forwarded_port", guest: 22, host: 60113, auto_correct: false, id: "ssh"
+  end  
+  
+  #Ansible-Node114	 
+  config.vm.define:"ansible-node114" do |cfg|
+     cfg.vm.box = "ubuntu/trusty64"
+	 cfg.vm.provider:virtualbox do |vb|
+	   vb.name="Ansible-Node114(github_SysNet4Admin)"
+	 end
+	 cfg.vm.host_name="ansible-node114"
+	 cfg.vm.synced_folder ".", "/vagrant", disabled: true
+	 cfg.vm.network "public_network", ip: "192.168.1.114"
+	 cfg.vm.network "forwarded_port", guest: 22, host: 60114, auto_correct: false, id: "ssh"
+  end  
+  
+  #Ansible-Node115	 
+  config.vm.define:"ansible-node115" do |cfg|
+     cfg.vm.box = "ubuntu/trusty64"
+	 cfg.vm.provider:virtualbox do |vb|
+	   vb.name="Ansible-Node115(github_SysNet4Admin)"
+	 end
+	 cfg.vm.host_name="ansible-node115"
+	 cfg.vm.synced_folder ".", "/vagrant", disabled: true
+	 cfg.vm.network "public_network", ip: "192.168.1.115"
+	 cfg.vm.network "forwarded_port", guest: 22, host: 60115, auto_correct: false, id: "ssh"
+  end  
+  
+  #Ansible-Node116	 
+  config.vm.define:"ansible-node116" do |cfg|
+     cfg.vm.box = "ubuntu/trusty64"
+	 cfg.vm.provider:virtualbox do |vb|
+	   vb.name="Ansible-Node116(github_SysNet4Admin)"
+	 end
+	 cfg.vm.host_name="ansible-node116"
+	 cfg.vm.synced_folder ".", "/vagrant", disabled: true
+	 cfg.vm.network "public_network", ip: "192.168.1.116"
+	 cfg.vm.network "forwarded_port", guest: 22, host: 60116, auto_correct: false, id: "ssh"
+  end  
+  
+  #Ansible-Node117	 
+  config.vm.define:"ansible-node117" do |cfg|
+     cfg.vm.box = "ubuntu/trusty64"
+	 cfg.vm.provider:virtualbox do |vb|
+	   vb.name="Ansible-Node117(github_SysNet4Admin)"
+	 end
+	 cfg.vm.host_name="ansible-node117"
+	 cfg.vm.synced_folder ".", "/vagrant", disabled: true
+	 cfg.vm.network "public_network", ip: "192.168.1.117"
+	 cfg.vm.network "forwarded_port", guest: 22, host: 60117, auto_correct: false, id: "ssh"
+  end  
+  
+  #Ansible-Node118	 
+  config.vm.define:"ansible-node118" do |cfg|
+     cfg.vm.box = "ubuntu/trusty64"
+	 cfg.vm.provider:virtualbox do |vb|
+	   vb.name="Ansible-Node118(github_SysNet4Admin)"
+	 end
+	 cfg.vm.host_name="ansible-node118"
+	 cfg.vm.synced_folder ".", "/vagrant", disabled: true
+	 cfg.vm.network "public_network", ip: "192.168.1.118"
+	 cfg.vm.network "forwarded_port", guest: 22, host: 60118, auto_correct: false, id: "ssh"
+  end  
+  
+  #Ansible-Node119	 
+  config.vm.define:"ansible-node119" do |cfg|
+     cfg.vm.box = "ubuntu/trusty64"
+	 cfg.vm.provider:virtualbox do |vb|
+	   vb.name="Ansible-Node119(github_SysNet4Admin)"
+	 end
+	 cfg.vm.host_name="ansible-node119"
+	 cfg.vm.synced_folder ".", "/vagrant", disabled: true
+	 cfg.vm.network "public_network", ip: "192.168.1.119"
+	 cfg.vm.network "forwarded_port", guest: 22, host: 60119, auto_correct: false, id: "ssh"
+  end  
+  
+  #Ansible-Node120	 
+  config.vm.define:"ansible-node120" do |cfg|
+     cfg.vm.box = "ubuntu/trusty64"
+	 cfg.vm.provider:virtualbox do |vb|
+	   vb.name="Ansible-Node120(github_SysNet4Admin)"
+	 end
+	 cfg.vm.host_name="ansible-node120"
+	 cfg.vm.synced_folder ".", "/vagrant", disabled: true
+	 cfg.vm.network "public_network", ip: "192.168.1.120"
+	 cfg.vm.network "forwarded_port", guest: 22, host: 60120, auto_correct: false, id: "ssh"
+  end  
+  
+  
+
+  
+  #==============#
+  # CentOS nodes #
+  #==============#
+ 
+
+  #Ansible-Node210
+  config.vm.define:"ansible-node210" do |cfg|
+     cfg.vm.box = "centos/7"
+	 cfg.vm.provider:virtualbox do |vb|
+	   vb.name="Ansible-Node210(github_SysNet4Admin)"
+	 end
+	 cfg.vm.host_name="ansible-node210"
+	 cfg.vm.synced_folder ".", "/vagrant", disabled: true
+	 cfg.vm.network "public_network", ip: "192.168.1.210"
+	 cfg.vm.network "forwarded_port", guest: 22, host: 60210, auto_correct: false, id: "ssh"
+	 cfg.vm.provision "shell", path: "bash_ssh_conf_4_CentOS.sh"
+  end  
+  
+  #Ansible-Node211	 
+  config.vm.define:"ansible-node211" do |cfg|
+     cfg.vm.box = "centos/7"
+	 cfg.vm.provider:virtualbox do |vb|
+	   vb.name="Ansible-Node211(github_SysNet4Admin)"
+	 end
+	 cfg.vm.host_name="ansible-node211"
+	 cfg.vm.synced_folder ".", "/vagrant", disabled: true
+	 cfg.vm.network "public_network", ip: "192.168.1.211"
+	 cfg.vm.network "forwarded_port", guest: 22, host: 60211, auto_correct: false, id: "ssh"
+	 cfg.vm.provision "shell", path: "bash_ssh_conf_4_CentOS.sh"
+  end  
+
+  #Ansible-Node212	 
+  config.vm.define:"ansible-node212" do |cfg|
+     cfg.vm.box = "centos/7"
+	 cfg.vm.provider:virtualbox do |vb|
+	   vb.name="Ansible-Node212(github_SysNet4Admin)"
+	 end
+	 cfg.vm.host_name="ansible-node212"
+	 cfg.vm.synced_folder ".", "/vagrant", disabled: true
+	 cfg.vm.network "public_network", ip: "192.168.1.212"
+	 cfg.vm.network "forwarded_port", guest: 22, host: 60212, auto_correct: false, id: "ssh"
+	 cfg.vm.provision "shell", path: "bash_ssh_conf_4_CentOS.sh"
+  end  
+
+  #Ansible-Node213	 
+  config.vm.define:"ansible-node213" do |cfg|
+     cfg.vm.box = "centos/7"
+	 cfg.vm.provider:virtualbox do |vb|
+	   vb.name="Ansible-Node213(github_SysNet4Admin)"
+	 end
+	 cfg.vm.host_name="ansible-node213"
+	 cfg.vm.synced_folder ".", "/vagrant", disabled: true
+	 cfg.vm.network "public_network", ip: "192.168.1.213"
+	 cfg.vm.network "forwarded_port", guest: 22, host: 60213, auto_correct: false, id: "ssh"
+	 cfg.vm.provision "shell", path: "bash_ssh_conf_4_CentOS.sh"
+  end
+
+  #Ansible-Node214	 
+  config.vm.define:"ansible-node214" do |cfg|
+     cfg.vm.box = "centos/7"
+	 cfg.vm.provider:virtualbox do |vb|
+	   vb.name="Ansible-Node214(github_SysNet4Admin)"
+	 end
+	 cfg.vm.host_name="ansible-node214"
+	 cfg.vm.synced_folder ".", "/vagrant", disabled: true
+	 cfg.vm.network "public_network", ip: "192.168.1.214"
+	 cfg.vm.network "forwarded_port", guest: 22, host: 60214, auto_correct: false, id: "ssh"
+	 cfg.vm.provision "shell", path: "bash_ssh_conf_4_CentOS.sh"
+  end  
+
+  #Ansible-Node215	 
+  config.vm.define:"ansible-node215" do |cfg|
+     cfg.vm.box = "centos/7"
+	 cfg.vm.provider:virtualbox do |vb|
+	   vb.name="Ansible-Node215(github_SysNet4Admin)"
+	 end
+	 cfg.vm.host_name="ansible-node215"
+	 cfg.vm.synced_folder ".", "/vagrant", disabled: true
+	 cfg.vm.network "public_network", ip: "192.168.1.215"
+	 cfg.vm.network "forwarded_port", guest: 22, host: 60215, auto_correct: false, id: "ssh"
+	 cfg.vm.provision "shell", path: "bash_ssh_conf_4_CentOS.sh"
+  end  
+
+  #Ansible-Node216	 
+  config.vm.define:"ansible-node216" do |cfg|
+     cfg.vm.box = "centos/7"
+	 cfg.vm.provider:virtualbox do |vb|
+	   vb.name="Ansible-Node216(github_SysNet4Admin)"
+	 end
+	 cfg.vm.host_name="ansible-node216"
+	 cfg.vm.synced_folder ".", "/vagrant", disabled: true
+	 cfg.vm.network "public_network", ip: "192.168.1.216"
+	 cfg.vm.network "forwarded_port", guest: 22, host: 60216, auto_correct: false, id: "ssh"
+	 cfg.vm.provision "shell", path: "bash_ssh_conf_4_CentOS.sh"
+  end  
+
+  #Ansible-Node217	 
+  config.vm.define:"ansible-node217" do |cfg|
+     cfg.vm.box = "centos/7"
+	 cfg.vm.provider:virtualbox do |vb|
+	   vb.name="Ansible-Node217(github_SysNet4Admin)"
+	 end
+	 cfg.vm.host_name="ansible-node217"
+	 cfg.vm.synced_folder ".", "/vagrant", disabled: true
+	 cfg.vm.network "public_network", ip: "192.168.1.217"
+	 cfg.vm.network "forwarded_port", guest: 22, host: 60217, auto_correct: false, id: "ssh"
+	 cfg.vm.provision "shell", path: "bash_ssh_conf_4_CentOS.sh"
+  end
+
+  #Ansible-Node218	 
+  config.vm.define:"ansible-node218" do |cfg|
+     cfg.vm.box = "centos/7"
+	 cfg.vm.provider:virtualbox do |vb|
+	   vb.name="Ansible-Node218(github_SysNet4Admin)"
+	 end
+	 cfg.vm.host_name="ansible-node218"
+	 cfg.vm.synced_folder ".", "/vagrant", disabled: true
+	 cfg.vm.network "public_network", ip: "192.168.1.218"
+	 cfg.vm.network "forwarded_port", guest: 22, host: 60218, auto_correct: false, id: "ssh"
+	 cfg.vm.provision "shell", path: "bash_ssh_conf_4_CentOS.sh"
+  end  
+
+  #Ansible-Node219	 
+  config.vm.define:"ansible-node219" do |cfg|
+     cfg.vm.box = "centos/7"
+	 cfg.vm.provider:virtualbox do |vb|
+	   vb.name="Ansible-Node219(github_SysNet4Admin)"
+	 end
+	 cfg.vm.host_name="ansible-node219"
+	 cfg.vm.synced_folder ".", "/vagrant", disabled: true
+	 cfg.vm.network "public_network", ip: "192.168.1.219"
+	 cfg.vm.network "forwarded_port", guest: 22, host: 60219, auto_correct: false, id: "ssh"
+	 cfg.vm.provision "shell", path: "bash_ssh_conf_4_CentOS.sh"
+  end  
+
+  #Ansible-Node220	 
+  config.vm.define:"ansible-node220" do |cfg|
+     cfg.vm.box = "centos/7"
+	 cfg.vm.provider:virtualbox do |vb|
+	   vb.name="Ansible-Node220(github_SysNet4Admin)"
+	 end
+	 cfg.vm.host_name="ansible-node220"
+	 cfg.vm.synced_folder ".", "/vagrant", disabled: true
+	 cfg.vm.network "public_network", ip: "192.168.1.220"
+	 cfg.vm.network "forwarded_port", guest: 22, host: 60220, auto_correct: false, id: "ssh"
+	 cfg.vm.provision "shell", path: "bash_ssh_conf_4_CentOS.sh"
+  end  
+
+
+  
+end

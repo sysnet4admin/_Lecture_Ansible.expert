@@ -1,0 +1,9 @@
+---
+- name: Install nginx on the nodes
+  hosts: nodes
+  become: yes
+  vars:
+    ansible_ssh_pipelining: true
+    
+  roles:
+    - { role: ./roles/nginx }

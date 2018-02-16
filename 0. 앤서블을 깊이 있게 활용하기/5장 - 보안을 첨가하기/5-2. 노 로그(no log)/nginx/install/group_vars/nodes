@@ -1,0 +1,7 @@
+lnx_name: "{{ 'Ubuntu' if ansible_distribution == 'Ubuntu'
+               else 'CentOS' if ansible_distribution == 'CentOS'
+               else 'Just Linux' }}"
+
+ansible_ssh_user: vagrant
+ansible_ssh_pass: vagrant
+ansible_ssh_port: 22

@@ -1,0 +1,29 @@
+---
+- hosts: nodes
+  become: yes
+  gather_facts: no
+  strategy: free
+
+  tasks:
+  - name: remove samba
+    package: name=samba state=absent
+  - name: remove ntp
+    package: name=ntp state=absent
+  - name: remove git
+    package: name=git state=absent
+  - name: remove golang
+    package: name=golang state=absent
+  - name: remove clang
+    package: name=clang state=absent
+  - name: remove freeipmi
+    package: name=freeipmi state=absent
+  - name: remove crash
+    package: name=crash state=absent
+  - name: remove tftp
+    package: name=tftp state=absent
+  - name: remove psutils
+    package: name=psutils state=absent
+  - name: remove rsyslog
+    package: name=rsyslog state=absent
+  - name: remove tree
+    package: name=tree state=absent

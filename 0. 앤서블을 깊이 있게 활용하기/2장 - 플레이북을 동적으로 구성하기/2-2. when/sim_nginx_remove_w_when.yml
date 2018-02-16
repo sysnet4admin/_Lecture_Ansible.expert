@@ -1,0 +1,9 @@
+---
+- name: Uninstall nginx on the nodes
+  hosts: nodes
+  become: yes
+
+  tasks:
+    - name: Uninstall nginx web server
+      action : "{{ ansible_pkg_mgr }} name=nginx state=absent autoremove=yes"
+      when : ansible_distribution == 'Ubuntu'

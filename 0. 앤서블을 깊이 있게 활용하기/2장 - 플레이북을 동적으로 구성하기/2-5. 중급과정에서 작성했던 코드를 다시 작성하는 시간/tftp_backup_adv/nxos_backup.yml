@@ -1,0 +1,7 @@
+- name: running-config backup
+  nxos_command:
+    commands: 
+      'copy running-config 
+       tftp://{{ ansible_all_ipv4_addresses[0] }}/n9k-RC_{{ ansible_date_time.iso8601 }} 
+       vrf management'
+    transport: cli

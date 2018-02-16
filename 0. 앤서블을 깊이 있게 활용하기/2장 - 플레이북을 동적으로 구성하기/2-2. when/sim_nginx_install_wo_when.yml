@@ -1,0 +1,10 @@
+---
+- name: Install nginx on the ubuntu nodes
+  hosts: nodes
+  become: yes
+
+  tasks:
+    - name: Install nginx web server
+      action : "apt name=nginx state=present update_cache=yes"
+
+

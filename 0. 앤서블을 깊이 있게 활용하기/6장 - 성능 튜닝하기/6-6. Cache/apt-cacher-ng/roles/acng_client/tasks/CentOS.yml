@@ -1,0 +1,5 @@
+- name: Config Proxy Client
+  lineinfile:
+    path: /etc/yum.conf
+    insertafter: 'distroverpkg=centos-release'
+    line: "proxy=http://{{acng_server}}:3142"

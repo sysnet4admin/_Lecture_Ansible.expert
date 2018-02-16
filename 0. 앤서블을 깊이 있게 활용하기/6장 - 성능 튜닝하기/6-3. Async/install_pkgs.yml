@@ -1,0 +1,31 @@
+---
+- hosts: nodes
+  become: yes
+
+  tasks:
+  - name: update_cache for Ubuntu
+    action : "{{ ansible_pkg_mgr }} update_cache=yes"
+    when : ansible_distribution == 'Ubuntu'
+    
+  - name: install samba
+    package: name=samba state=present
+  - name: install ntp
+    package: name=ntp state=present
+  - name: install git
+    package: name=git state=present
+  - name: install golang
+    package: name=golang state=present
+  - name: install clang
+    package: name=clang state=present
+  - name: install freeipmi
+    package: name=freeipmi state=present
+  - name: install crash
+    package: name=crash state=present
+  - name: install tftp
+    package: name=tftp state=present
+  - name: install psutils
+    package: name=psutils state=present
+  - name: install rsyslog
+    package: name=rsyslog state=present
+  - name: install tree
+    package: name=tree state=present

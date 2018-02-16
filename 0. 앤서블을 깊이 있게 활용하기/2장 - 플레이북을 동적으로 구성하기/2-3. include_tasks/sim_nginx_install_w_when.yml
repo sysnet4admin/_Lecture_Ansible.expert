@@ -1,0 +1,16 @@
+---
+- name: Install nginx on the nodes
+  hosts: nodes
+  become: yes
+
+  tasks:
+    - name: Install nginx web server
+      action : "{{ ansible_pkg_mgr }} name=nginx state=present update_cache=yes"
+      when : ansible_distribution == 'Ubuntu'
+
+    - name: Install nginx web server2-1
+      action : "{{ ansible_pkg_mgr }} name=epel-release state=latest"
+      when : ansible_distribution == 'CentOS'
+    - name: Install nginx web server2-2
+      action : "{{ ansible_pkg_mgr }} name=nginx state=present"
+      when : ansible_distribution == 'CentOS'

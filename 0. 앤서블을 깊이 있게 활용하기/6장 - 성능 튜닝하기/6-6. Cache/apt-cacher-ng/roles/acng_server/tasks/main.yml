@@ -1,0 +1,12 @@
+---
+- name: Install apt-cacher-ng for CentOS
+  package: name=apt-cacher-ng state=present
+- name: Config apt-cacher-ng
+  include_tasks: "apt-cacher-ng_config.yml"
+- name: Config Proxy Server
+  lineinfile:
+    create: yes
+    path: /etc/apt/apt.conf.d/02proxy
+    line: Acquire::http { Proxy "http://{{ acng_server }}:3142"; };
+  notify:
+    - Restart apt-cacher-ng service

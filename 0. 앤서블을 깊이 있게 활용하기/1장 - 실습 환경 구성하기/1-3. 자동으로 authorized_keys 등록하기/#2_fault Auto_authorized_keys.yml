@@ -1,0 +1,24 @@
+---
+- hosts: localhost
+  gather_facts: no
+  tasks:
+  - name: ssh-keygen
+    command: "ssh-keygen -b 2048 -t rsa -f ~/.ssh/id_rsa -q -N ''"
+    ignore_errors: yes
+  - name: read id_rsa.pub
+    command: "cat ~/.ssh/id_rsa.pub"
+    register: id_pub
+  - name: localhost's debug msg
+    debug:
+      msg: "{{ id_pub }}"
+
+- hosts: nodes
+  gather_facts: no
+  tasks:
+  - name: nodes's debug msg
+    debug:
+      msg: "{{ id_pub }}"
+  - name: remote lineinfile for authorized_keys
+    lineinfile:
+      dest: /home/vagrant/.ssh/authorized_keys
+      line: "{{ id_pub.stdout }}"
