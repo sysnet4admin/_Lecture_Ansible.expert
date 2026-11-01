@@ -7,7 +7,7 @@
     action : "{{ ansible_pkg_mgr }} update_cache=yes"
     when : ansible_distribution == 'Ubuntu'
     
-    - name: install samba
+  - name: install samba
     package: name=samba state=present
   - name: install ntp
     package: name=ntp state=present
